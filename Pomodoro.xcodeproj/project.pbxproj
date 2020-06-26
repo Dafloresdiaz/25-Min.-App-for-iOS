@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490D5AEC24A546420061C2D7 /* getDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D5AEB24A546420061C2D7 /* getDate.swift */; };
+		490D5AED24A550830061C2D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBB3924A2AA8B00D17FD2 /* ViewController.swift */; };
 		49EFBB3624A2AA8B00D17FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBB3524A2AA8B00D17FD2 /* AppDelegate.swift */; };
 		49EFBB3824A2AA8B00D17FD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBB3724A2AA8B00D17FD2 /* SceneDelegate.swift */; };
-		49EFBB3A24A2AA8B00D17FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBB3924A2AA8B00D17FD2 /* ViewController.swift */; };
 		49EFBB3D24A2AA8B00D17FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB3B24A2AA8B00D17FD2 /* Main.storyboard */; };
 		49EFBB3F24A2AA8D00D17FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB3E24A2AA8D00D17FD2 /* Assets.xcassets */; };
 		49EFBB4224A2AA8D00D17FD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB4024A2AA8D00D17FD2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490D5AEB24A546420061C2D7 /* getDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDate.swift; sourceTree = "<group>"; };
 		49EFBB3224A2AA8B00D17FD2 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EFBB3524A2AA8B00D17FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EFBB3724A2AA8B00D17FD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490D5AEA24A546210061C2D7 /* getLabels */ = {
+			isa = PBXGroup;
+			children = (
+				490D5AEB24A546420061C2D7 /* getDate.swift */,
+			);
+			path = getLabels;
+			sourceTree = "<group>";
+		};
 		49EFBB2924A2AA8B00D17FD2 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		49EFBB3424A2AA8B00D17FD2 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				490D5AEA24A546210061C2D7 /* getLabels */,
 				49EFBB3524A2AA8B00D17FD2 /* AppDelegate.swift */,
 				49EFBB3724A2AA8B00D17FD2 /* SceneDelegate.swift */,
 				49EFBB3924A2AA8B00D17FD2 /* ViewController.swift */,
@@ -138,8 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49EFBB3A24A2AA8B00D17FD2 /* ViewController.swift in Sources */,
+				490D5AEC24A546420061C2D7 /* getDate.swift in Sources */,
 				49EFBB3624A2AA8B00D17FD2 /* AppDelegate.swift in Sources */,
+				490D5AED24A550830061C2D7 /* ViewController.swift in Sources */,
 				49EFBB3824A2AA8B00D17FD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
