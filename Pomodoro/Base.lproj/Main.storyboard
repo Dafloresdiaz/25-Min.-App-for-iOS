@@ -44,7 +44,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="141"/>
                                 </state>
                                 <connections>
-                                    <action selector="startTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EZ3-QI-9P8"/>
+                                    <action selector="startOrPauseTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLc-Va-DTD"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-gs-Fzl">
@@ -63,8 +63,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonStartOrPause" destination="4My-BW-njA" id="rzt-6I-j4T"/>
                         <outlet property="getCurrentDate" destination="txg-et-Igi" id="guq-fx-L3z"/>
                         <outlet property="getTimerUpdate" destination="D2d-0Y-sKq" id="Zel-mw-I4M"/>
+                        <outlet property="totalRoundsCount" destination="k55-ee-1TG" id="pyL-ep-li1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
