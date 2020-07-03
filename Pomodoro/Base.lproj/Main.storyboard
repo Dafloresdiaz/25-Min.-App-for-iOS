@@ -47,7 +47,7 @@
                                     <action selector="startOrPauseTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLc-Va-DTD"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-gs-Fzl">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-gs-Fzl">
                                 <rect key="frame" x="32" y="384" width="350" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -66,6 +66,7 @@
                         <outlet property="buttonStartOrPause" destination="4My-BW-njA" id="rzt-6I-j4T"/>
                         <outlet property="getCurrentDate" destination="txg-et-Igi" id="guq-fx-L3z"/>
                         <outlet property="getTimerUpdate" destination="D2d-0Y-sKq" id="Zel-mw-I4M"/>
+                        <outlet property="progressTimeBar" destination="FVh-gs-Fzl" id="vwn-Df-u7c"/>
                         <outlet property="totalRoundsCount" destination="k55-ee-1TG" id="pyL-ep-li1"/>
                     </connections>
                 </viewController>

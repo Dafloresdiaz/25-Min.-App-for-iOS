@@ -14,6 +14,7 @@
 		49EFBB3D24A2AA8B00D17FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB3B24A2AA8B00D17FD2 /* Main.storyboard */; };
 		49EFBB3F24A2AA8D00D17FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB3E24A2AA8D00D17FD2 /* Assets.xcassets */; };
 		49EFBB4224A2AA8D00D17FD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EFBB4024A2AA8D00D17FD2 /* LaunchScreen.storyboard */; };
+		49F4BA0124AEA31000C3C643 /* generalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F4B9FF24AE9DD600C3C643 /* generalConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		49EFBB3E24A2AA8D00D17FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49EFBB4124A2AA8D00D17FD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49EFBB4324A2AA8D00D17FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F4B9FF24AE9DD600C3C643 /* generalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generalConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		49EFBB3424A2AA8B00D17FD2 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				49F4B9FE24AE9D8200C3C643 /* notifications */,
 				490D5AEA24A546210061C2D7 /* getLabels */,
 				49EFBB3524A2AA8B00D17FD2 /* AppDelegate.swift */,
 				49EFBB3724A2AA8B00D17FD2 /* SceneDelegate.swift */,
@@ -76,6 +79,14 @@
 				49EFBB4324A2AA8D00D17FD2 /* Info.plist */,
 			);
 			path = Pomodoro;
+			sourceTree = "<group>";
+		};
+		49F4B9FE24AE9D8200C3C643 /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				49F4B9FF24AE9DD600C3C643 /* generalConfig.swift */,
+			);
+			path = notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F4BA0124AEA31000C3C643 /* generalConfig.swift in Sources */,
 				490D5AEC24A546420061C2D7 /* getDate.swift in Sources */,
 				49EFBB3624A2AA8B00D17FD2 /* AppDelegate.swift in Sources */,
 				490D5AED24A550830061C2D7 /* ViewController.swift in Sources */,

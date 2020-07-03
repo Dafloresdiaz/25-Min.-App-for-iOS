@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var getTimerUpdate: UILabel!
     @IBOutlet weak var buttonStartOrPause: UIButton!
     @IBOutlet weak var totalRoundsCount: UILabel!
+    @IBOutlet weak var progressTimeBar: UIProgressView!
     
     let pauseImage = UIImage(systemName: "pause.circle")
     let playImage = UIImage(systemName: "play.circle")
@@ -22,12 +23,17 @@ class ViewController: UIViewController {
     var roundCount = 0
     //25 min are 1500 seconds
     var secondsTotal = 60
+    var totalTime = 60
+    var isBreak = false
     
     let getDateString = getDate()
+    let createWorkNotification = configNotifications()
+    
     var timer : Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressTimeBar.progress = 0
         getCurrentDate.text = getDateString.getDateStringFormat()
         
     }
@@ -52,26 +58,56 @@ class ViewController: UIViewController {
     }
     
     @objc func getTimerRunning(){
-        if (secondsTotal > 0){
-            let minutes = Int(secondsTotal / 60 % 60)
-            let seconds = Int(secondsTotal % 60)
-            
-            if (minutes < 10){
-                getTimerUpdate.text = "0\(minutes):\(seconds)"
-            }
-            if (minutes < 10 && seconds < 10) {
-                getTimerUpdate.text = "0\(minutes):0\(seconds)"
-            }
-            secondsTotal -= 1
-        }else{
-            secondsTotal = 65
-            getTimerUpdate.text = "01:05"
-            buttonStartOrPause.setImage(playImage, for: .normal)
-            timer?.invalidate()
-            
-            roundCount += 1
-            totalRoundsCount.text = "\(roundCount)/4"
+        
+        if secondsTotal == 65 || secondsTotal == 90{
+            totalTime = secondsTotal
+            isBreak = true
+        }else if secondsTotal == 60 {
+            totalTime = secondsTotal
         }
+        
+        let minutes = Int(secondsTotal / 60 % 60)
+        let seconds = Int(secondsTotal % 60)
+        
+        if (minutes < 10){
+            getTimerUpdate.text = "0\(minutes):\(seconds)"
+        }
+        if (minutes < 10 && seconds < 10) {
+            getTimerUpdate.text = "0\(minutes):0\(seconds)"
+        }
+        secondsTotal -= 1
+        UIView.animate(withDuration: Double(totalTime)) {
+            self.progressTimeBar.setProgress(1.0, animated: true)
+        }
+        
+        if secondsTotal == 0 {
+            progressTimeBar.progress = 0
+            addRoundAndChangeTime()
+        }
+    }
+    
+    func addRoundAndChangeTime(){
+        if isBreak {
+            secondsTotal = 60
+            getTimerUpdate.text = "01:00"
+            isBreak = false
+        }else{
+            roundCount += 1
+            if roundCount == 4 {
+                secondsTotal = 90
+                getTimerUpdate.text = "01:30"
+                roundCount = 0
+                totalRoundsCount.text = "\(roundCount)/4"
+            }else{
+                totalRoundsCount.text = "\(roundCount)/4"
+                secondsTotal = 65
+                getTimerUpdate.text = "01:05"
+            }
+        }
+        
+        isPaused = true
+        buttonStartOrPause.setImage(playImage, for: .normal)
+        timer?.invalidate()
     }
     
 }
