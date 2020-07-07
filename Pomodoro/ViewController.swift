@@ -25,33 +25,38 @@ class ViewController: UIViewController {
     var secondsTotal = 60
     var totalTime = 60
     var isBreak = false
+    var bgTask : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
     
     let getDateString = getDate()
     let createWorkNotification = configNotifications()
     
-    var timer : Timer?
+    var timer : Timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressTimeBar.progress = 0
+        progressTimeBar.progress = 1
         getCurrentDate.text = getDateString.getDateStringFormat()
+        print(getDateString.getCurrentTime())
         
     }
 
 
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
+            bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: { UIApplication.shared.endBackgroundTask(self.bgTask) })
             timer = Timer.scheduledTimer(timeInterval: 1.0,
                                          target: self,
                                          selector: #selector(getTimerRunning),
                                          userInfo: nil, repeats: true)
+            
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
             
             buttonStartOrPause.setImage(pauseImage, for: .normal)
             
             isPaused = false
             
         }else{
-            timer?.invalidate()
+            timer.invalidate()
             buttonStartOrPause.setImage(playImage, for: .normal)
             isPaused = true
         }
@@ -66,6 +71,10 @@ class ViewController: UIViewController {
             totalTime = secondsTotal
         }
         
+        secondsTotal -= 1
+        
+        progressTimeBar.setProgress((Float(secondsTotal)/Float(totalTime)), animated: true)
+        
         let minutes = Int(secondsTotal / 60 % 60)
         let seconds = Int(secondsTotal % 60)
         
@@ -75,13 +84,10 @@ class ViewController: UIViewController {
         if (minutes < 10 && seconds < 10) {
             getTimerUpdate.text = "0\(minutes):0\(seconds)"
         }
-        secondsTotal -= 1
-        UIView.animate(withDuration: Double(totalTime)) {
-            self.progressTimeBar.setProgress(1.0, animated: true)
-        }
         
         if secondsTotal == 0 {
-            progressTimeBar.progress = 0
+            progressTimeBar.progress = 1
+            createWorkNotification.workNotification()
             addRoundAndChangeTime()
         }
     }
@@ -107,7 +113,7 @@ class ViewController: UIViewController {
         
         isPaused = true
         buttonStartOrPause.setImage(playImage, for: .normal)
-        timer?.invalidate()
+        timer.invalidate()
     }
     
 }

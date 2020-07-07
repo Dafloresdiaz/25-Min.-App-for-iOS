@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4My-BW-njA"; */
+"4My-BW-njA.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "01:00"; ObjectID = "D2d-0Y-sKq"; */
+"D2d-0Y-sKq.text" = "01:00";
+
+/* Class = "UILabel"; text = "Round:"; ObjectID = "d4Q-rg-O8Q"; */
+"d4Q-rg-O8Q.text" = "Round:";
+
+/* Class = "UILabel"; text = "0/4"; ObjectID = "k55-ee-1TG"; */
+"k55-ee-1TG.text" = "0/4";
+
+/* Class = "UILabel"; text = "17-08-1994"; ObjectID = "txg-et-Igi"; */
+"txg-et-Igi.text" = "17-08-1994";

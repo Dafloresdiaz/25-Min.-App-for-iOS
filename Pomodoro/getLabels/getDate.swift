@@ -20,4 +20,10 @@ class getDate {
         return dateText
     }
     
+    func getCurrentTime() -> String {
+        formatter.dateFormat = "HH:mm:ss"
+        let timeText = formatter.string(from: date)
+        return timeText
+    }
+    
 }

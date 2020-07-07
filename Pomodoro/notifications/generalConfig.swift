@@ -23,6 +23,14 @@ class configNotifications {
                    }
         }
     }
+    
+    func workNotification(){
+        let content = UNMutableNotificationContent()
+        content.title = "The break is done, get back to work"
+        content.body =  "The break time is over"
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+    }
 
 }
 
