@@ -28,10 +28,11 @@ class ViewController: UIViewController {
     var bgTask : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
     
     let getDateString = getDate()
-    let createWorkNotification = configNotifications()
+    let createNotifications = configNotifications()
     
     var timer : Timer = Timer()
     
+    //Function for the view Load
     override func viewDidLoad() {
         super.viewDidLoad()
         progressTimeBar.progress = 1
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         
     }
 
-
+    //FUnction for the start and pause the timer
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
             bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: { UIApplication.shared.endBackgroundTask(self.bgTask) })
@@ -62,6 +63,10 @@ class ViewController: UIViewController {
         }
     }
     
+    //Function to do the process of countdown the timer for each second
+    //make the progress of the bar, to make it more clear the time is running
+    //If the seocnd reach 0 is necessary to start form the beginign the
+    //progress bar and change the labels with the correct string
     @objc func getTimerRunning(){
         
         if secondsTotal == 65 || secondsTotal == 90{
@@ -87,8 +92,9 @@ class ViewController: UIViewController {
         
         if secondsTotal == 0 {
             progressTimeBar.progress = 1
-            createWorkNotification.workNotification()
+            createNotifications.sendNotification(isBreak: isBreak)
             addRoundAndChangeTime()
+            UIApplication.shared.endBackgroundTask(bgTask)
         }
     }
     

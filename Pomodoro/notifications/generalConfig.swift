@@ -9,7 +9,9 @@
 import Foundation
 import UserNotifications
 
-let notificationCenter = UNUserNotificationCenter.current()
+let notificationCenter   = UNUserNotificationCenter.current()
+let sendWorkNotification = workNotification()
+let sendRestNotification = restNotification()
 
 class configNotifications {
     
@@ -24,14 +26,13 @@ class configNotifications {
         }
     }
     
-    func workNotification(){
-        let content = UNMutableNotificationContent()
-        content.title = "The break is done, get back to work"
-        content.body =  "The break time is over"
-        content.sound = UNNotificationSound.default
-        content.badge = 1
+    func sendNotification(isBreak : Bool){
+        if (isBreak){
+            sendRestNotification.restNotification()
+        }else{
+            sendWorkNotification.workNotification()
+        }
     }
-
 }
 
 
