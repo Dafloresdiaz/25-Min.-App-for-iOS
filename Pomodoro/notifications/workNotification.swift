@@ -11,17 +11,25 @@ import UserNotifications
 
 class workNotification {
     
-    func workNotification(){
+    func workNotification(minutes : Int, seconds : Int, secondsTotal : Int){
+        let workMinutes = ((secondsTotal % 3600) / 60)
+        let workSeconds = ((secondsTotal % 3600) % 60)
+        
+        var date = DateComponents()
+        date.minute = minutes + workMinutes
+        date.second = seconds + workSeconds
+        
         let content = UNMutableNotificationContent()
         content.title = "¡Good job!"
         content.body  = "Is time to take a rest"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        //let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         
-        UNUserNotificationCenter.current().add(request)
+        //let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
+        
+        //UNUserNotificationCenter.current().add(request)
     }
     
 }

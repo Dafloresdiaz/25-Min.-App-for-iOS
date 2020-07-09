@@ -27,8 +27,9 @@ class ViewController: UIViewController {
     var isBreak = false
     var bgTask : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
     
-    let getDateString = getDate()
+    let getInfoDateTime = getDateAndTimeInfo()
     let createNotifications = configNotifications()
+    let removeNotification = removeNotifications()
     
     var timer : Timer = Timer()
     
@@ -36,28 +37,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         progressTimeBar.progress = 1
-        getCurrentDate.text = getDateString.getDateStringFormat()
-        print(getDateString.getCurrentTime())
-        
+        getCurrentDate.text = getInfoDateTime.getDateStringFormat()
     }
 
     //FUnction for the start and pause the timer
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
-            bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: { UIApplication.shared.endBackgroundTask(self.bgTask) })
             timer = Timer.scheduledTimer(timeInterval: 1.0,
                                          target: self,
                                          selector: #selector(getTimerRunning),
                                          userInfo: nil, repeats: true)
             
-            RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
-            
             buttonStartOrPause.setImage(pauseImage, for: .normal)
+            
+            
+            //Make a function of this behavior
+            let currentMinutes = getInfoDateTime.getCurrentMinutes()
+            let currentSeconds = getInfoDateTime.geCurrentSeconds()
+            print(currentMinutes)
+            print(currentSeconds)
+            createNotifications.sendNotification(isBreak: isBreak, minutes: currentMinutes, seconds: currentSeconds, secondsTotal: secondsTotal)
             
             isPaused = false
             
         }else{
             timer.invalidate()
+            //removeNotification.removeCurrentNotification()
             buttonStartOrPause.setImage(playImage, for: .normal)
             isPaused = true
         }
@@ -92,9 +97,7 @@ class ViewController: UIViewController {
         
         if secondsTotal == 0 {
             progressTimeBar.progress = 1
-            createNotifications.sendNotification(isBreak: isBreak)
             addRoundAndChangeTime()
-            UIApplication.shared.endBackgroundTask(bgTask)
         }
     }
     

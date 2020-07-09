@@ -19,18 +19,18 @@ class configNotifications {
     init(){
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]){ (granted, error) in
                    if granted {
-                       print("yey")
+                       print("Notification allowed")
                    }else{
-                       print("nop")
+                       print("Notofocation not allowed")
                    }
         }
     }
     
-    func sendNotification(isBreak : Bool){
+    func sendNotification(isBreak : Bool, minutes: Int, seconds: Int, secondsTotal : Int){
         if (isBreak){
             sendRestNotification.restNotification()
         }else{
-            sendWorkNotification.workNotification()
+            sendWorkNotification.workNotification(minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
         }
     }
 }
