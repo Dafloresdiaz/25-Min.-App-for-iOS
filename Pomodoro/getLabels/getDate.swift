@@ -36,4 +36,8 @@ class getDateAndTimeInfo {
         return Int(seconds)!
     }
     
+    func secondsBetweenDates(oldDate: Date, new: Date){
+        
+    }
+    
 }

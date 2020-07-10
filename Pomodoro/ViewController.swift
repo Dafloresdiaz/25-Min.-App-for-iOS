@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     var secondsTotal = 60
     var totalTime = 60
     var isBreak = false
-    var bgTask : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
     
     let getInfoDateTime = getDateAndTimeInfo()
     let createNotifications = configNotifications()
@@ -38,6 +37,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         progressTimeBar.progress = 1
         getCurrentDate.text = getInfoDateTime.getDateStringFormat()
+        let state = UIApplication.shared.applicationState
+        if state == .active {
+           print("I'm active")
+        }
+        else if state == .inactive {
+           print("I'm inactive")
+        }
+        else if state == .background {
+           print("I'm in background")
+        }
     }
 
     //FUnction for the start and pause the timer
@@ -51,18 +60,17 @@ class ViewController: UIViewController {
             buttonStartOrPause.setImage(pauseImage, for: .normal)
             
             
+            
             //Make a function of this behavior
             let currentMinutes = getInfoDateTime.getCurrentMinutes()
             let currentSeconds = getInfoDateTime.geCurrentSeconds()
-            print(currentMinutes)
-            print(currentSeconds)
             createNotifications.sendNotification(isBreak: isBreak, minutes: currentMinutes, seconds: currentSeconds, secondsTotal: secondsTotal)
             
             isPaused = false
             
         }else{
             timer.invalidate()
-            //removeNotification.removeCurrentNotification()
+            removeNotification.removeCurrentNotification()
             buttonStartOrPause.setImage(playImage, for: .normal)
             isPaused = true
         }
@@ -118,6 +126,7 @@ class ViewController: UIViewController {
                 secondsTotal = 65
                 getTimerUpdate.text = "01:05"
             }
+            isBreak = true
         }
         
         isPaused = true

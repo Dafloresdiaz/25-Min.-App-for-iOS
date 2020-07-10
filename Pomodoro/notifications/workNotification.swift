@@ -25,11 +25,11 @@ class workNotification {
         content.sound = UNNotificationSound.default
         
         
-        //let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         
-        //let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         
-        //UNUserNotificationCenter.current().add(request)
+        UNUserNotificationCenter.current().add(request)
     }
     
 }

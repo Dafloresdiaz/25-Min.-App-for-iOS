@@ -11,13 +11,21 @@ import UserNotifications
 
 class restNotification {
     
-    func restNotification(){
+    func restNotification(minutes : Int, seconds : Int, secondsTotal : Int){
+        let workMinutes = ((secondsTotal % 3600) / 60)
+        let workSeconds = ((secondsTotal % 3600) % 60)
+               
+        var date = DateComponents()
+        date.minute = minutes + workMinutes
+        date.second = seconds + workSeconds
+        
+        
         let content = UNMutableNotificationContent()
         content.title = "¡The break time is over!"
         content.body  = "Go back to work"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         
