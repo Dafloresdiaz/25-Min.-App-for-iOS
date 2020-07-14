@@ -19,6 +19,11 @@ class ViewController: UIViewController {
     
     let pauseImage = UIImage(systemName: "pause.circle")
     let playImage = UIImage(systemName: "play.circle")
+
+    var startDate = Date()
+    var endDate = Date()
+    var countActive = 0
+    var againActive = false
     var isPaused = true
     var roundCount = 0
     //25 min are 1500 seconds
@@ -37,29 +42,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         progressTimeBar.progress = 1
         getCurrentDate.text = getInfoDateTime.getDateStringFormat()
-        let state = UIApplication.shared.applicationState
-        if state == .active {
-           print("I'm active")
-        }
-        else if state == .inactive {
-           print("I'm inactive")
-        }
-        else if state == .background {
-           print("I'm in background")
-        }
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
     //FUnction for the start and pause the timer
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
+            startDate = Date()
+            
             timer = Timer.scheduledTimer(timeInterval: 1.0,
                                          target: self,
                                          selector: #selector(getTimerRunning),
                                          userInfo: nil, repeats: true)
             
             buttonStartOrPause.setImage(pauseImage, for: .normal)
-            
-            
             
             //Make a function of this behavior
             let currentMinutes = getInfoDateTime.getCurrentMinutes()
@@ -87,6 +84,13 @@ class ViewController: UIViewController {
             isBreak = true
         }else if secondsTotal == 60 {
             totalTime = secondsTotal
+        }
+        
+        if(!isPaused && againActive){
+            let secondBackground = getInfoDateTime.secondsBetweenDates(startDate: startDate, endDate: endDate)
+            secondsTotal = secondsTotal + secondBackground
+            print(secondsTotal)
+            againActive = false
         }
         
         secondsTotal -= 1
@@ -132,6 +136,15 @@ class ViewController: UIViewController {
         isPaused = true
         buttonStartOrPause.setImage(playImage, for: .normal)
         timer.invalidate()
+    }
+    
+    @objc func appAgainActive() -> Bool {
+        countActive += 1
+        if(countActive > 1){
+            endDate = Date()
+            againActive = true
+        }
+        return againActive
     }
     
 }

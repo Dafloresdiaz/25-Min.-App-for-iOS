@@ -20,6 +20,13 @@ class getDateAndTimeInfo {
         return dateText
     }
     
+    func getTimeStringFormat() -> String {
+        let date = Date()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .none
+        return (formatter.string(from: date))
+    }
+    
     func getCurrentMinutes() -> Int {
         let date = Date()
         // This return the date with a type string
@@ -36,8 +43,8 @@ class getDateAndTimeInfo {
         return Int(seconds)!
     }
     
-    func secondsBetweenDates(oldDate: Date, new: Date){
-        
+    func secondsBetweenDates(startDate : Date, endDate: Date) -> Int{
+        return Int(startDate.timeIntervalSince(endDate))
     }
     
 }
