@@ -38,7 +38,7 @@ class getDateAndTimeInfo {
     func geCurrentSeconds() -> Int {
         let date = Date()
         // This return the date with a type string
-        formatter.dateFormat = "ss"
+        formatter.dateFormat = "ss"   
         let seconds = formatter.string(from: date)
         return Int(seconds)!
     }
