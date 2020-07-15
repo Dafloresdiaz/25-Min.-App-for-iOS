@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     let pauseImage = UIImage(systemName: "pause.circle")
     let playImage = UIImage(systemName: "play.circle")
+    let activeNotification = NotificationCenter.default
+    let backgroundNotification = NotificationCenter.default
 
     var startDate = Date()
     var endDate = Date()
@@ -42,8 +44,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         progressTimeBar.progress = 1
         getCurrentDate.text = getInfoDateTime.getDateStringFormat()
-        let notification = NotificationCenter.default
-        notification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        activeNotification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        backgroundNotification.addObserver(self, selector: #selector(appInBackGround), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     //FUnction for the start and pause the timer
@@ -89,7 +91,6 @@ class ViewController: UIViewController {
         if(!isPaused && againActive){
             let secondBackground = getInfoDateTime.secondsBetweenDates(startDate: startDate, endDate: endDate)
             secondsTotal = secondsTotal + secondBackground
-            print(secondsTotal)
             againActive = false
         }
         
@@ -107,7 +108,7 @@ class ViewController: UIViewController {
             getTimerUpdate.text = "0\(minutes):0\(seconds)"
         }
         
-        if secondsTotal == 0 {
+        if secondsTotal <= 0 {
             progressTimeBar.progress = 1
             addRoundAndChangeTime()
         }
@@ -142,10 +143,15 @@ class ViewController: UIViewController {
         countActive += 1
         if(countActive > 1){
             endDate = Date()
+            print(endDate)
             againActive = true
         }
         return againActive
     }
     
+    @objc func appInBackGround(){
+        startDate = Date()
+        print(startDate)
+    }
 }
 

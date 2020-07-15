@@ -45,6 +45,7 @@ class getDateAndTimeInfo {
     
     func secondsBetweenDates(startDate : Date, endDate: Date) -> Int{
         return Int(startDate.timeIntervalSince(endDate))
+        
     }
     
 }
