@@ -7,15 +7,14 @@
 //
 
 import UIKit
-
+import MBCircularProgressBar
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var getCurrentDate: UILabel!
     @IBOutlet weak var getTimerUpdate: UILabel!
     @IBOutlet weak var buttonStartOrPause: UIButton!
     @IBOutlet weak var totalRoundsCount: UILabel!
-    @IBOutlet weak var progressTimeBar: UIProgressView!
+    @IBOutlet weak var circularProgBar: MBCircularProgressBarView!
     
     let pauseImage = UIImage(systemName: "pause.circle")
     let playImage = UIImage(systemName: "play.circle")
@@ -42,8 +41,7 @@ class ViewController: UIViewController {
     //Function for the view Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressTimeBar.progress = 1
-        getCurrentDate.text = getInfoDateTime.getDateStringFormat()
+        circularProgBar.value = 0
         activeNotification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         backgroundNotification.addObserver(self, selector: #selector(appInBackGround), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
@@ -52,7 +50,6 @@ class ViewController: UIViewController {
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
             startDate = Date()
-            
             timer = Timer.scheduledTimer(timeInterval: 1.0,
                                          target: self,
                                          selector: #selector(getTimerRunning),
@@ -88,15 +85,18 @@ class ViewController: UIViewController {
             totalTime = secondsTotal
         }
         
+        circularProgBar.maxValue = CGFloat(totalTime)
+        
         if(!isPaused && againActive){
             let secondBackground = getInfoDateTime.secondsBetweenDates(startDate: startDate, endDate: endDate)
             secondsTotal = secondsTotal + secondBackground
+            circularProgBar.value += CGFloat(secondBackground)
             againActive = false
+        }else{
+            circularProgBar.value += 1
         }
         
         secondsTotal -= 1
-        
-        progressTimeBar.setProgress((Float(secondsTotal)/Float(totalTime)), animated: true)
         
         let minutes = Int(secondsTotal / 60 % 60)
         let seconds = Int(secondsTotal % 60)
@@ -109,8 +109,8 @@ class ViewController: UIViewController {
         }
         
         if secondsTotal <= 0 {
-            progressTimeBar.progress = 1
             addRoundAndChangeTime()
+            circularProgBar.value = 0
         }
     }
     

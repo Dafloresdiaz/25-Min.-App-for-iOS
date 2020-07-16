@@ -15,58 +15,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-rg-O8Q">
-                                <rect key="frame" x="162" y="704" width="90" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-rg-O8Q">
+                                <rect key="frame" x="133" y="119" width="148" height="32.5"/>
+                                <color key="tintColor" red="0.27276030845882948" green="0.34381440761734788" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.93801283840000005" green="0.94513267280000002" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k55-ee-1TG">
-                                <rect key="frame" x="182" y="755" width="51" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k55-ee-1TG">
+                                <rect key="frame" x="181" y="169.5" width="51" height="39"/>
+                                <color key="tintColor" red="0.27276030845882948" green="0.34381440761734788" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.93801283840000005" green="0.94513267280000002" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-0Y-sKq">
-                                <rect key="frame" x="32" y="239" width="350" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.14999999999999999" width="1" height="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="122"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-BW-njA">
-                                <rect key="frame" x="125" y="488" width="163" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="play.circle" catalog="system">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-BW-njA">
+                                <rect key="frame" x="124.5" y="636.5" width="165.5" height="160"/>
+                                <color key="tintColor" red="0.93801283840000005" green="0.94513267280000002" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="play.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="141"/>
                                 </state>
                                 <connections>
                                     <action selector="startOrPauseTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLc-Va-DTD"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-gs-Fzl">
-                                <rect key="frame" x="32" y="384" width="350" height="2"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17-08-1994" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txg-et-Igi">
-                                <rect key="frame" x="80" y="135" width="254" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-jO-lNs" customClass="MBCircularProgressBarView">
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="332.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-0Y-sKq">
+                                        <rect key="frame" x="123" y="127" width="166.5" height="79"/>
+                                        <rect key="contentStretch" x="0.0" y="0.14999999999999999" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                        <color key="textColor" red="0.93801283840000005" green="0.94513267280000002" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86140060419999998" green="0.32841402289999999" blue="0.37938743829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.45468088686830338" green="0.3219156036626637" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="D2d-0Y-sKq" firstAttribute="centerX" secondItem="1VV-jO-lNs" secondAttribute="centerX" id="aFb-Pv-oIr"/>
+                                    <constraint firstItem="D2d-0Y-sKq" firstAttribute="centerY" secondItem="1VV-jO-lNs" secondAttribute="centerY" id="apr-bJ-UcI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.91986495260000001" green="0.76944583649999998" blue="0.20832100510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                        <color key="value" red="0.91986495260000001" green="0.76944583649999998" blue="0.20832100510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                        <color key="value" red="0.36651116610000001" green="0.37235572929999999" blue="0.44238531590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                        <color key="value" red="0.36651116610000001" green="0.37235572929999999" blue="0.44238531590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.86140060419999998" green="0.32841402289999999" blue="0.37938743829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d4Q-rg-O8Q" firstAttribute="centerX" secondItem="k55-ee-1TG" secondAttribute="centerX" id="6hw-9q-zqI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4My-BW-njA" secondAttribute="trailing" id="97B-C4-lf8"/>
+                            <constraint firstItem="1VV-jO-lNs" firstAttribute="centerX" secondItem="4My-BW-njA" secondAttribute="centerX" id="DG5-O4-wBT"/>
+                            <constraint firstAttribute="trailing" secondItem="1VV-jO-lNs" secondAttribute="trailing" id="FeJ-gU-icA"/>
+                            <constraint firstItem="1VV-jO-lNs" firstAttribute="top" secondItem="k55-ee-1TG" secondAttribute="bottom" constant="50" id="RbE-lH-8Zk"/>
+                            <constraint firstItem="k55-ee-1TG" firstAttribute="top" secondItem="d4Q-rg-O8Q" secondAttribute="bottom" constant="18" id="UUg-QK-vNc"/>
+                            <constraint firstItem="d4Q-rg-O8Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="133" id="WDU-tu-eJP"/>
+                            <constraint firstItem="k55-ee-1TG" firstAttribute="centerX" secondItem="1VV-jO-lNs" secondAttribute="centerX" id="ffL-sA-Ik1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4My-BW-njA" secondAttribute="bottom" constant="65.5" id="fmS-mh-Gh3"/>
+                            <constraint firstItem="1VV-jO-lNs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jdq-7L-D79"/>
+                            <constraint firstItem="4My-BW-njA" firstAttribute="top" secondItem="1VV-jO-lNs" secondAttribute="bottom" constant="45.5" id="kBX-xa-uip"/>
+                            <constraint firstItem="4My-BW-njA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oc6-Dw-QsP"/>
+                            <constraint firstItem="k55-ee-1TG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="181" id="vLp-Ig-iAb"/>
+                            <constraint firstItem="d4Q-rg-O8Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="zGf-ig-gsk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonStartOrPause" destination="4My-BW-njA" id="rzt-6I-j4T"/>
-                        <outlet property="getCurrentDate" destination="txg-et-Igi" id="guq-fx-L3z"/>
+                        <outlet property="circularProgBar" destination="1VV-jO-lNs" id="5fC-GQ-IxE"/>
                         <outlet property="getTimerUpdate" destination="D2d-0Y-sKq" id="Zel-mw-I4M"/>
-                        <outlet property="progressTimeBar" destination="FVh-gs-Fzl" id="vwn-Df-u7c"/>
                         <outlet property="totalRoundsCount" destination="k55-ee-1TG" id="pyL-ep-li1"/>
                     </connections>
                 </viewController>
