@@ -27,9 +27,10 @@ class ViewController: UIViewController {
     var againActive = false
     var isPaused = true
     var roundCount = 0
+    
     //25 min are 1500 seconds
     var secondsTotal = 60
-    var totalTime = 60
+    var countSeconds : CGFloat = 0
     var isBreak = false
     
     let getInfoDateTime = getDateAndTimeInfo()
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         circularProgBar.value = 0
+        circularProgBar.maxValue = CGFloat(secondsTotal)
         activeNotification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         backgroundNotification.addObserver(self, selector: #selector(appInBackGround), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
@@ -79,24 +81,20 @@ class ViewController: UIViewController {
     @objc func getTimerRunning(){
         
         if secondsTotal == 65 || secondsTotal == 90{
-            totalTime = secondsTotal
             isBreak = true
-        }else if secondsTotal == 60 {
-            totalTime = secondsTotal
         }
-        
-        circularProgBar.maxValue = CGFloat(totalTime)
         
         if(!isPaused && againActive){
             let secondBackground = getInfoDateTime.secondsBetweenDates(startDate: startDate, endDate: endDate)
             secondsTotal = secondsTotal + secondBackground
-            circularProgBar.value += CGFloat(secondBackground)
+            countSeconds = countSeconds - CGFloat(secondBackground)
             againActive = false
-        }else{
-            circularProgBar.value += 1
         }
         
         secondsTotal -= 1
+        countSeconds += 1
+        circularProgBar.value = countSeconds
+        
         
         let minutes = Int(secondsTotal / 60 % 60)
         let seconds = Int(secondsTotal % 60)
@@ -111,6 +109,7 @@ class ViewController: UIViewController {
         if secondsTotal <= 0 {
             addRoundAndChangeTime()
             circularProgBar.value = 0
+            countSeconds = 0.0
         }
     }
     
@@ -119,6 +118,8 @@ class ViewController: UIViewController {
             secondsTotal = 60
             getTimerUpdate.text = "01:00"
             isBreak = false
+            circularProgBar.progressColor = UIColor(red: 0.92, green: 0.77, blue: 0.21, alpha: 1.00)
+            circularProgBar.progressStrokeColor = UIColor(red: 0.92, green: 0.77, blue: 0.21, alpha: 1.00)
         }else{
             roundCount += 1
             if roundCount == 4 {
@@ -132,9 +133,12 @@ class ViewController: UIViewController {
                 getTimerUpdate.text = "01:05"
             }
             isBreak = true
+            circularProgBar.progressColor = UIColor(red: 0.39, green: 0.71, blue: 0.67, alpha: 1.00)
+            circularProgBar.progressStrokeColor = UIColor(red: 0.39, green: 0.71, blue: 0.67, alpha: 1.00)
         }
         
         isPaused = true
+        circularProgBar.maxValue = CGFloat(secondsTotal)
         buttonStartOrPause.setImage(playImage, for: .normal)
         timer.invalidate()
     }
@@ -143,7 +147,6 @@ class ViewController: UIViewController {
         countActive += 1
         if(countActive > 1){
             endDate = Date()
-            print(endDate)
             againActive = true
         }
         return againActive
@@ -151,7 +154,6 @@ class ViewController: UIViewController {
     
     @objc func appInBackGround(){
         startDate = Date()
-        print(startDate)
     }
 }
 

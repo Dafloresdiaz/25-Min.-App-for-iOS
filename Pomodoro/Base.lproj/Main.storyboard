@@ -39,7 +39,7 @@
                                     <action selector="startOrPauseTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLc-Va-DTD"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-jO-lNs" customClass="MBCircularProgressBarView">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-jO-lNs" customClass="MBCircularProgressBarView">
                                 <rect key="frame" x="0.0" y="258.5" width="414" height="332.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-0Y-sKq">
@@ -50,14 +50,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86140060419999998" green="0.32841402289999999" blue="0.37938743829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.75647610430000001" green="0.16312432290000001" blue="0.18027722839999999" alpha="0.95026220034246578" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.45468088686830338" green="0.3219156036626637" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="D2d-0Y-sKq" firstAttribute="centerX" secondItem="1VV-jO-lNs" secondAttribute="centerX" id="aFb-Pv-oIr"/>
                                     <constraint firstItem="D2d-0Y-sKq" firstAttribute="centerY" secondItem="1VV-jO-lNs" secondAttribute="centerY" id="apr-bJ-UcI"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="19"/>
                                     </userDefinedRuntimeAttribute>
@@ -76,10 +75,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.86140060419999998" green="0.32841402289999999" blue="0.37938743829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.75647610430000001" green="0.16312432290000001" blue="0.18027722839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d4Q-rg-O8Q" firstAttribute="centerX" secondItem="k55-ee-1TG" secondAttribute="centerX" id="6hw-9q-zqI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4My-BW-njA" secondAttribute="trailing" id="97B-C4-lf8"/>
