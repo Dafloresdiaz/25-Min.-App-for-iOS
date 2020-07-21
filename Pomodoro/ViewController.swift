@@ -29,7 +29,9 @@ class ViewController: UIViewController {
     var roundCount = 0
     
     //25 min are 1500 seconds
-    var secondsTotal = 60
+    //5 min are 300 seconds
+    //20 min are 1200 seconds
+    var secondsTotal = 1500
     var countSeconds : CGFloat = 0
     var isBreak = false
     
@@ -80,7 +82,7 @@ class ViewController: UIViewController {
     //progress bar and change the labels with the correct string
     @objc func getTimerRunning(){
         
-        if secondsTotal == 65 || secondsTotal == 90{
+        if secondsTotal == 300 || secondsTotal == 1200 {
             isBreak = true
         }
         
@@ -101,9 +103,12 @@ class ViewController: UIViewController {
         
         if (minutes < 10){
             getTimerUpdate.text = "0\(minutes):\(seconds)"
-        }
-        if (minutes < 10 && seconds < 10) {
+        }else if (minutes < 10 && seconds < 10) {
             getTimerUpdate.text = "0\(minutes):0\(seconds)"
+        }else if (seconds < 10) {
+            getTimerUpdate.text = "\(minutes):0\(seconds)"
+        }else{
+            getTimerUpdate.text = "\(minutes):\(seconds)"
         }
         
         if secondsTotal <= 0 {
@@ -115,22 +120,22 @@ class ViewController: UIViewController {
     
     func addRoundAndChangeTime(){
         if isBreak {
-            secondsTotal = 60
-            getTimerUpdate.text = "01:00"
+            secondsTotal = 1500
+            getTimerUpdate.text = "25:00"
             isBreak = false
             circularProgBar.progressColor = UIColor(red: 0.92, green: 0.77, blue: 0.21, alpha: 1.00)
             circularProgBar.progressStrokeColor = UIColor(red: 0.92, green: 0.77, blue: 0.21, alpha: 1.00)
         }else{
             roundCount += 1
             if roundCount == 4 {
-                secondsTotal = 90
-                getTimerUpdate.text = "01:30"
+                secondsTotal = 1200
+                getTimerUpdate.text = "20:00"
                 roundCount = 0
                 totalRoundsCount.text = "\(roundCount)/4"
             }else{
                 totalRoundsCount.text = "\(roundCount)/4"
-                secondsTotal = 65
-                getTimerUpdate.text = "01:05"
+                secondsTotal = 300
+                getTimerUpdate.text = "05:00"
             }
             isBreak = true
             circularProgBar.progressColor = UIColor(red: 0.39, green: 0.71, blue: 0.67, alpha: 1.00)
