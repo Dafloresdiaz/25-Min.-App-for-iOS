@@ -26,7 +26,7 @@
 		497434C624B521D700954D3D /* workNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workNotification.swift; sourceTree = "<group>"; };
 		497434C824B5243B00954D3D /* restNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restNotification.swift; sourceTree = "<group>"; };
 		497434CA24B698C500954D3D /* removeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeNotification.swift; sourceTree = "<group>"; };
-		49EFBB3224A2AA8B00D17FD2 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49EFBB3224A2AA8B00D17FD2 /* 25 Min..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "25 Min..app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EFBB3524A2AA8B00D17FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EFBB3724A2AA8B00D17FD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49EFBB3924A2AA8B00D17FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		49EFBB3324A2AA8B00D17FD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49EFBB3224A2AA8B00D17FD2 /* Pomodoro.app */,
+				49EFBB3224A2AA8B00D17FD2 /* 25 Min..app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			);
 			name = Pomodoro;
 			productName = Pomodoro;
-			productReference = 49EFBB3224A2AA8B00D17FD2 /* Pomodoro.app */;
+			productReference = 49EFBB3224A2AA8B00D17FD2 /* 25 Min..app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -397,7 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielFlores.Pomodoro;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "25 Min.";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -416,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielFlores.Pomodoro;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "25 Min.";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
