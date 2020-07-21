@@ -26,11 +26,11 @@ class configNotifications {
         }
     }
     
-    func sendNotification(isBreak : Bool, minutes: Int, seconds: Int, secondsTotal : Int){
+    func sendNotification(isBreak : Bool, hours: Int, minutes: Int, seconds: Int, secondsTotal : Int){
         if (isBreak){
             sendRestNotification.restNotification(minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
         }else{
-            sendWorkNotification.workNotification(minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
+            sendWorkNotification.workNotification(hours: hours, minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
         }
     }
 }

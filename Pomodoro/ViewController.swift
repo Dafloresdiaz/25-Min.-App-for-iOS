@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         backgroundNotification.addObserver(self, selector: #selector(appInBackGround), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
-    //FUnction for the start and pause the timer
+    //Function for the start and pause the timer
     @IBAction func startOrPauseTime(_ sender: Any) {
         if isPaused {
             startDate = Date()
@@ -62,9 +62,10 @@ class ViewController: UIViewController {
             buttonStartOrPause.setImage(pauseImage, for: .normal)
             
             //Make a function of this behavior
+            let currentHours   = getInfoDateTime.getCurrentHour()
             let currentMinutes = getInfoDateTime.getCurrentMinutes()
             let currentSeconds = getInfoDateTime.geCurrentSeconds()
-            createNotifications.sendNotification(isBreak: isBreak, minutes: currentMinutes, seconds: currentSeconds, secondsTotal: secondsTotal)
+            createNotifications.sendNotification(isBreak: isBreak, hours: currentHours, minutes: currentMinutes, seconds: currentSeconds, secondsTotal: secondsTotal)
             
             isPaused = false
             
@@ -103,7 +104,7 @@ class ViewController: UIViewController {
         
         if (minutes < 10 && seconds < 10) {
             getTimerUpdate.text = "0\(minutes):0\(seconds)"
-        }else if (minutes < 10 && seconds < 10) {
+        }else if (minutes > 10 && seconds < 10) {
             getTimerUpdate.text = "\(minutes):0\(seconds)"
         }else{
             getTimerUpdate.text = "\(minutes):\(seconds)"
@@ -116,6 +117,8 @@ class ViewController: UIViewController {
         }
     }
     
+    //When the timer is done, this funciton select if the next round will be
+    // work or rest and do the proper changes to the variables
     func addRoundAndChangeTime(){
         if isBreak {
             secondsTotal = 1500
@@ -146,6 +149,7 @@ class ViewController: UIViewController {
         timer.invalidate()
     }
     
+    //This function is in charge of checking if the app goes into background
     @objc func appAgainActive() -> Bool {
         countActive += 1
         if(countActive > 1){
@@ -155,6 +159,8 @@ class ViewController: UIViewController {
         return againActive
     }
     
+    //If the app goes to background is necessary to update the current time
+    //This would help to do the operation of the seconds correct
     @objc func appInBackGround(){
         startDate = Date()
     }

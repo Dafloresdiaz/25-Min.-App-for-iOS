@@ -11,13 +11,17 @@ import UserNotifications
 
 class workNotification {
     
-    func workNotification(minutes : Int, seconds : Int, secondsTotal : Int){
+    func workNotification(hours: Int, minutes : Int, seconds : Int, secondsTotal : Int){
+        let workHours   = ((secondsTotal / 3600))
         let workMinutes = ((secondsTotal % 3600) / 60)
         let workSeconds = ((secondsTotal % 3600) % 60)
         
         var date = DateComponents()
+        date.hour   = hours + workHours
         date.minute = minutes + workMinutes
         date.second = seconds + workSeconds
+        
+        print(date)
         
         let content = UNMutableNotificationContent()
         content.title = "¡Good job!"

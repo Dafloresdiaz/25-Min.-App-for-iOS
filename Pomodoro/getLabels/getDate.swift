@@ -27,9 +27,15 @@ class getDateAndTimeInfo {
         return (formatter.string(from: date))
     }
     
+    func getCurrentHour () -> Int {
+        let date = Date()
+        formatter.dateFormat = "HH"
+        let hours = formatter.string(from: date)
+        return Int(hours)!
+    }
+    
     func getCurrentMinutes() -> Int {
         let date = Date()
-        // This return the date with a type string
         formatter.dateFormat = "mm"
         let minutes = formatter.string(from: date)
         return Int(minutes)!
@@ -37,7 +43,6 @@ class getDateAndTimeInfo {
     
     func geCurrentSeconds() -> Int {
         let date = Date()
-        // This return the date with a type string
         formatter.dateFormat = "ss"   
         let seconds = formatter.string(from: date)
         return Int(seconds)!
