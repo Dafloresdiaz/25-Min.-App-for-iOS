@@ -101,11 +101,9 @@ class ViewController: UIViewController {
         let minutes = Int(secondsTotal / 60 % 60)
         let seconds = Int(secondsTotal % 60)
         
-        if (minutes < 10){
-            getTimerUpdate.text = "0\(minutes):\(seconds)"
-        }else if (minutes < 10 && seconds < 10) {
+        if (minutes < 10 && seconds < 10) {
             getTimerUpdate.text = "0\(minutes):0\(seconds)"
-        }else if (seconds < 10) {
+        }else if (minutes < 10 && seconds < 10) {
             getTimerUpdate.text = "\(minutes):0\(seconds)"
         }else{
             getTimerUpdate.text = "\(minutes):\(seconds)"
