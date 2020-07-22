@@ -28,7 +28,7 @@ class configNotifications {
     
     func sendNotification(isBreak : Bool, hours: Int, minutes: Int, seconds: Int, secondsTotal : Int){
         if (isBreak){
-            sendRestNotification.restNotification(minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
+            sendRestNotification.restNotification(hours: hours, minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
         }else{
             sendWorkNotification.workNotification(hours: hours, minutes: minutes, seconds: seconds, secondsTotal: secondsTotal)
         }

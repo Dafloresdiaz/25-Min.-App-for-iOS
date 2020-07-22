@@ -12,7 +12,7 @@ import UserNotifications
 class workNotification {
     
     func workNotification(hours: Int, minutes : Int, seconds : Int, secondsTotal : Int){
-        let workHours   = ((secondsTotal / 3600))
+        let workHours   = (secondsTotal / 3600)
         let workMinutes = ((secondsTotal % 3600) / 60)
         let workSeconds = ((secondsTotal % 3600) % 60)
         
