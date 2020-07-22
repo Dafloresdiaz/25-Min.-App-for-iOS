@@ -21,8 +21,21 @@ class workNotification {
         date.minute = minutes + workMinutes
         date.second = seconds + workSeconds
         
-        print(date)
+        if (date.second! > 60) {
+            date.second! = date.second! - 60
+            date.minute! += 1
+        }
         
+        if (date.minute! > 60) {
+            date.minute! = date.minute! - 60
+            date.hour! += 1
+        }
+        
+        if (date.hour! > 23) {
+            date.hour! = 0
+        }
+        
+        print(date)
         let content = UNMutableNotificationContent()
         content.title = "¡Good job!"
         content.body  = "Is time to take a rest"
