@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     //Function for the view Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.translatesAutoresizingMaskIntoConstraints = true
         circularProgBar.value = 0
         circularProgBar.maxValue = CGFloat(secondsTotal)
         activeNotification.addObserver(self, selector: #selector(appAgainActive), name: UIApplication.didBecomeActiveNotification, object: nil)
