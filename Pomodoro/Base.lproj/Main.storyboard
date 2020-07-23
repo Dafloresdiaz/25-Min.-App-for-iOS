@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -30,10 +30,10 @@
                                 <color key="highlightedColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-jO-lNs" customClass="MBCircularProgressBarView">
-                                <rect key="frame" x="0.0" y="258" width="414" height="335"/>
+                                <rect key="frame" x="10" y="258" width="394" height="397"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-0Y-sKq">
-                                        <rect key="frame" x="120" y="124.5" width="174" height="79"/>
+                                        <rect key="frame" x="110" y="155.5" width="174" height="79"/>
                                         <rect key="contentStretch" x="0.0" y="0.14999999999999999" width="1" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="79" id="1WT-kp-dSZ"/>
@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4My-BW-njA">
-                                <rect key="frame" x="113" y="612" width="188" height="188"/>
+                                <rect key="frame" x="126" y="703" width="163" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="tdf-hM-FNR"/>
                                 <color key="tintColor" red="0.93801283840000005" green="0.94513267280000002" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,16 +88,16 @@
                         <constraints>
                             <constraint firstItem="k55-ee-1TG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="7DF-zb-fEO"/>
                             <constraint firstItem="1VV-jO-lNs" firstAttribute="top" secondItem="k55-ee-1TG" secondAttribute="bottom" constant="50" id="8wK-vX-Bwu"/>
-                            <constraint firstItem="1VV-jO-lNs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="985-IZ-5dy"/>
+                            <constraint firstItem="1VV-jO-lNs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="985-IZ-5dy"/>
                             <constraint firstItem="1VV-jO-lNs" firstAttribute="centerX" secondItem="k55-ee-1TG" secondAttribute="centerX" id="DdU-HX-V0k"/>
                             <constraint firstItem="d4Q-rg-O8Q" firstAttribute="centerX" secondItem="k55-ee-1TG" secondAttribute="centerX" id="H5G-qp-NVc"/>
                             <constraint firstItem="d4Q-rg-O8Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xml-pY-qqb"/>
                             <constraint firstItem="d4Q-rg-O8Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="chY-fo-R6Q"/>
                             <constraint firstItem="k55-ee-1TG" firstAttribute="top" secondItem="d4Q-rg-O8Q" secondAttribute="bottom" constant="18.5" id="eTj-Rx-dM0"/>
                             <constraint firstItem="d4Q-rg-O8Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="hSl-wl-KkS"/>
-                            <constraint firstItem="4My-BW-njA" firstAttribute="top" secondItem="1VV-jO-lNs" secondAttribute="bottom" constant="19" id="m7k-wW-L5a"/>
+                            <constraint firstItem="4My-BW-njA" firstAttribute="top" secondItem="1VV-jO-lNs" secondAttribute="bottom" constant="48" id="m7k-wW-L5a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d4Q-rg-O8Q" secondAttribute="trailing" constant="133" id="saG-Dj-aZ4"/>
-                            <constraint firstItem="1VV-jO-lNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vAq-pb-xhY"/>
+                            <constraint firstItem="1VV-jO-lNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vAq-pb-xhY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="128.98550724637681" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
