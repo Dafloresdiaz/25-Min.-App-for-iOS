@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.75647610430000001" green="0.16312432290000001" blue="0.18027722839999999" alpha="0.95026220034246578" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.78697437049999996" green="0.1907011867" blue="0.20925140380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.45468088686830338" green="0.3219156036626637" blue="0.95332342390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="D2d-0Y-sKq" firstAttribute="centerX" secondItem="1VV-jO-lNs" secondAttribute="centerX" id="8cC-4A-1Yv"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.75647610430000001" green="0.16312432290000001" blue="0.18027722839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.78697437049999996" green="0.1907011867" blue="0.20925140380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k55-ee-1TG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="7DF-zb-fEO"/>
                             <constraint firstItem="1VV-jO-lNs" firstAttribute="top" secondItem="k55-ee-1TG" secondAttribute="bottom" constant="50" id="8wK-vX-Bwu"/>
