@@ -30,7 +30,7 @@
  * You can check how the progress bar works here https://github.com/MatiBot/MBCircularProgressBar
 
 ---
-# What is next :squirrel:
+# What is next :rocket:
 ## Version 1.5 minor improvements
 * Seetings screen: For the next version the plan is to have a screen to modify the work time and the rest time
 
