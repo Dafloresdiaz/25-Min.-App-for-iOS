@@ -17,22 +17,22 @@
 # Process :thought_balloon:
 - [x] Design of the app
 - [x] Create the design in Xcode
-- [x] Timer functionlaity
+- [x] Timer functionality
 - [x] Solve the issue about the timer working when the app is on background
 - [x] Count the rounds for the work time
 - [x] Change the time and the label time
 - [x] Notification for the work time and the rest time
-- [x] Circular progress bar, using cocapods to add the code for the MBCircularProgressBar
+- [x] Circular progress bar, using cocoa pods to add the code for the MBCircularProgressBar
 - [x] Create the logo of the app
  
- ### MBCircularProgressBar
+ ## MBCircularProgressBar
  I use this code for the creation of the circular progress bar
  * You can check how the progress bar works here https://github.com/MatiBot/MBCircularProgressBar
 
 ---
 # What is next :rocket:
 ## Version 1.5 minor improvements
-* Seetings screen: For the next version the plan is to have a screen to modify the work time and the rest time
+* Settings screen: For the next version the plan is to have a screen to modify the work time and the rest time
 
 ## Version 2.0
 * Show some metrics about how much are the user working by day, week and month
@@ -41,4 +41,4 @@
 ---
 # License IMPORTANT! :copyright:
 * Copyright (c) 2020 Daniel Flores <dafloresdiaz@gmail.com>
-* Permission is free of charge, to any person obtaining this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use it and with the limitation of publish, distribute, sublicense, and/or sell copies of the Software
+* Permission is free of charge, to any person obtaining this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use it and with the limitation of publishing, distribute, sublicense, and/or sell copies of the Software
