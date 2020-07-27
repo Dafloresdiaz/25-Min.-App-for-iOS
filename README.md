@@ -14,7 +14,7 @@
 
 ### App images
 * Just a few images of how the app looks in an IPhone 11 Pro Max
-![](Images/Launch Screen.png)
+![](Images/LaunchScreen.png)
 ![](Images/HomeScreen.png)
 ![](Images/LogoInHomeScreen.png)
 
