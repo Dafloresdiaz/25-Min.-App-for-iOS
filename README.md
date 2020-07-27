@@ -12,6 +12,12 @@
 * The user will have 4 rounds of "work time" 
 * When the user finished the 4 round the rest time will change to 20 minutes
 
+### App images
+* Just a few images of how the app looks in an IPhone 11 Pro Max
+![](Images/Launch Screen.png)
+![](Images/HomeScreen.png)
+![](Images/LogoInHomeScreen.png)
+
 ---
 
 # Process :thought_balloon:
