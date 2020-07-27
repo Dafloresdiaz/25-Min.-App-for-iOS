@@ -37,3 +37,8 @@
 ## Version 2.0
 * Show some metrics about how much are the user working by day, week and month
 * To have objectives/goals by day
+
+---
+# License IMPORTANT! :copyright:
+* Copyright (c) 2020 Daniel Flores <dafloresdiaz@gmail.com>
+* Permission is free of charge, to any person obtaining this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use it and with the limitation of publish, distribute, sublicense, and/or sell copies of the Software
